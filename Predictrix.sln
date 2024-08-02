@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Predictrix", "Predictrix\Predictrix.csproj", "{442D102C-F187-4425-952B-61A6E1E7BA00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.Discord", "Serilog.Sinks.Discord\Serilog.Sinks.Discord.csproj", "{7530D911-7FAC-41C3-A0EF-72CE9EF9C27E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Predictrix.Domain", "Predictrix.Domain\Predictrix.Domain.csproj", "{A80F2BF0-C47A-4946-8F50-18E1AE65D55A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Predictrix.Infrastructure", "Predictrix.Infrastructure\Predictrix.Infrastructure.csproj", "{E4DCF140-D3D2-4103-BBFF-77D893BE3F85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Predictrix.Application", "Predictrix.Application\Predictrix.Application.csproj", "{25B59483-6DD0-484A-A3C9-281BC25F68A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{83F20281-9108-47B5-AF4F-4B4C09C99368}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{442D102C-F187-4425-952B-61A6E1E7BA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442D102C-F187-4425-952B-61A6E1E7BA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442D102C-F187-4425-952B-61A6E1E7BA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442D102C-F187-4425-952B-61A6E1E7BA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7530D911-7FAC-41C3-A0EF-72CE9EF9C27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7530D911-7FAC-41C3-A0EF-72CE9EF9C27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7530D911-7FAC-41C3-A0EF-72CE9EF9C27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7530D911-7FAC-41C3-A0EF-72CE9EF9C27E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A80F2BF0-C47A-4946-8F50-18E1AE65D55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80F2BF0-C47A-4946-8F50-18E1AE65D55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80F2BF0-C47A-4946-8F50-18E1AE65D55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80F2BF0-C47A-4946-8F50-18E1AE65D55A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4DCF140-D3D2-4103-BBFF-77D893BE3F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DCF140-D3D2-4103-BBFF-77D893BE3F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DCF140-D3D2-4103-BBFF-77D893BE3F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DCF140-D3D2-4103-BBFF-77D893BE3F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B59483-6DD0-484A-A3C9-281BC25F68A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B59483-6DD0-484A-A3C9-281BC25F68A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B59483-6DD0-484A-A3C9-281BC25F68A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B59483-6DD0-484A-A3C9-281BC25F68A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99789773-6882-4763-A529-6CBBA9A55292}
+	EndGlobalSection
+EndGlobal
