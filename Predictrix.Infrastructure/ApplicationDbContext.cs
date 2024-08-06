@@ -9,5 +9,6 @@ namespace Predictrix.Infrastructure
         public DbSet<Prediction> Predictions => Set<Prediction>();
         public DbSet<Assertion> Assertions => Set<Assertion>();
         public DbSet<Chat> Chats => Set<Chat>();
+        public DbSet<Vote> Votes => Set<Vote>();
     }
 }

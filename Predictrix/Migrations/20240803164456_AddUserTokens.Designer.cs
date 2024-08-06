@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Predictrix.Infrastructure;
 
@@ -11,9 +12,11 @@ using Predictrix.Infrastructure;
 namespace Predictrix.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240803164456_AddUserTokens")]
+    partial class AddUserTokens
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,31 +33,22 @@ namespace Predictrix.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CastingForecastDeadline")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("ChatId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Completed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime>("EndsAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<bool>("FinalAnswer")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("Predictions")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("ValidationDate")
-                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -68,6 +62,10 @@ namespace Predictrix.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Assertions")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -109,12 +107,8 @@ namespace Predictrix.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool>("Forecast")
+                    b.Property<bool>("Guess")
                         .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Rationale")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -145,39 +139,17 @@ namespace Predictrix.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Scores")
+                    b.Property<string>("ScoreSum")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Tokens")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Predictrix.Domain.Models.Vote", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Answer")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("AssertionId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Votes");
                 });
 #pragma warning restore 612, 618
         }

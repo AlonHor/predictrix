@@ -43,9 +43,13 @@ namespace Serilog.Sinks.Discord
                     messageBuilder.AppendLine(logEvent.Exception.Message);
                     messageBuilder.AppendLine(logEvent.Exception.StackTrace);
                 }
-                messageBuilder.AppendLine("```");
 
-                webHook.SendMessageAsync(messageBuilder.ToString(), false)
+                var message = messageBuilder.ToString();
+                if (message.Length >= 1996)
+                    message = message[..1996];
+                message += "```";
+
+                webHook.SendMessageAsync(message, false)
                     .GetAwaiter()
                     .GetResult();
             }
@@ -53,13 +57,13 @@ namespace Serilog.Sinks.Discord
             catch (Exception ex)
             {
                 webHook.SendMessageAsync(
-                    $"```arm\nooo snap, {ex.Message}\n```", false)
+                    $"```arm\n{ex.Message}\n```", false)
                     .GetAwaiter()
                     .GetResult();
             }
         }
 
-        public static string GetCodeTag(LogEventLevel level)
+        private static string GetCodeTag(LogEventLevel level)
         {
             return level switch
             {
