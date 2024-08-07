@@ -25,8 +25,6 @@ namespace Predictrix
             var jwtSecret = configuration["Authentication:Jwt:SecretKey"]
                            ?? throw new InvalidOperationException("JWT secret key not found!");
             
-            // builder.Configuration.AddJsonFile("secrets.json", true);
-
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .Enrich.FromLogContext()
@@ -80,6 +78,9 @@ namespace Predictrix
             app.UseMiddleware<ExceptionMiddleware>();
             
             app.WarmUp();
+            
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "7031";
+            app.Urls.Add($"https://*:{port}");
 
             app.Run();
         }
