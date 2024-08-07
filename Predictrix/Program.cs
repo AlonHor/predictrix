@@ -80,7 +80,7 @@ namespace Predictrix
             app.WarmUp();
             
             var port = Environment.GetEnvironmentVariable("PORT") ?? "7031";
-            app.Urls.Add($"https://*:{port}");
+            if (port != "7031") app.Urls.Add($"http://*:{port}");
 
             app.Run();
         }
