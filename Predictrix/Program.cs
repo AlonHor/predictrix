@@ -45,11 +45,6 @@ namespace Predictrix
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IDictionarySerializerService, DictionarySerializerService>();
             
-            FirebaseApp.Create(new AppOptions
-            {
-                Credential = GoogleCredential.FromFile(@"C:\Users\alonh\source\repos\Predictrix\google-application-credentials.json")
-            });
-            
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
